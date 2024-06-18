@@ -1,3 +1,4 @@
+import { AiFillDashboard } from "react-icons/ai"; 
 import react from "react";
 import "./App.css";
 import ZonePieChart from "./components/ZonePieChart";
@@ -14,11 +15,17 @@ function App() {
     <div className="w-full h-full flex flex-row justify-center items-center bg-[#121b2b]">
       <div className="w-1/6 h-[100vh] mt-[-900px] text-white flex flex-col p-2 gap-1 pt-12">
         <div className="h-3/12 flex flex-col">
+        <a
+            href=""
+            className="w-full mt-[-87px] mb-14 h-16 p-2 bg-slate-900 hover:bg-slate-800 flex justify-center items-center rounded-lg"
+          >
+           ECHARGEUP
+          </a>
           <a
             href=""
             className="w-full h-16 p-2 hover:bg-slate-900 flex justify-center items-center rounded-lg"
           >
-            Dashboard
+           Dashboard
           </a>
           <a
             href=""
