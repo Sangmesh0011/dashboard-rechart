@@ -3,16 +3,16 @@ import useCSVData from "../utils/useCSVData";
 
 const UserTable = () => {
   const data = useCSVData();
-  const newData=data.slice(0,7);  
+  const newData=data.slice(0,4);  
   return (
     <div className="text-white w-full h-full flex justify-center items-center p-8">
       <table className="w-full">
         <tbody>
           {newData.map((val, i) => (
-            <tr  className="h-14 p-2 odd:bg-slate-700 even:bg-slate-800" key={i}>
+            <tr className="h-14 p-2 odd:bg-slate-700 even:bg-slate-800" key={i}>
               <td className="pl-10">{val['name']}</td>
-              <td>{val['Phone Number']}</td>
-              <td>{val['Phone Network.currentNetworkName']}</td>
+              <td className="pl-10">{val['Phone Number']}</td>
+              <td className="pl-10 pr-10">{val['Phone Network.currentNetworkName']}</td>
             </tr>
           ))}
         </tbody>

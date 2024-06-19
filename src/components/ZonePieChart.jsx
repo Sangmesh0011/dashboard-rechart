@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Tooltip, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Tooltip, Legend,ResponsiveContainer } from "recharts";
 
 const ZonePieChart = ({data}) => {
 
@@ -28,8 +28,8 @@ const ZonePieChart = ({data}) => {
             dataKey="count"
             nameKey="Zone"
             cx="50%"
-            cy="50%"
-            outerRadius={120}
+            cy="40%"
+            outerRadius={100}
             fill="#8884d8"
           />
           <Tooltip />

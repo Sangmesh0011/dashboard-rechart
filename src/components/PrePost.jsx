@@ -30,12 +30,12 @@ const PrePost = ({ data }) => {
 
 
   return (
-    <div className="w-3/4 h-auto flex flex-col justify-center items-center ">
+    <div className="w-full h-full flex flex-row justify-center items-center ">
       <div className="w-full mb-4">
         <RadarChart
-          cx={220}
+          cx={120}
           cy={180}
-          outerRadius={150}
+          outerRadius={110}
           width={500}
           height={300}
           data={arrayOfObjects}
@@ -52,24 +52,28 @@ const PrePost = ({ data }) => {
           />
         </RadarChart>
       </div>
-      <div className="px-4 flex justify-center items-center gap-52 h-24 bg-[#04030528] rounded-2xl">
-        <div className="text-lg">Total Prepaid users</div>
+      <div className="">
+        <h2 className="w-52 absolute bottom-10 left-20 font-bold">Newtork service type</h2>
+      <div className="p-2 w-48 mt-[-40px] flex justify-center items-center gap-6 h-12 ml-[-100px] bg-[#04030528]">
+        <div className="text-sm">Prepaid users</div>
         <div>
-          <strong className="text-2xl">{newData.prepaid}</strong>
+          <strong className="text-xl">{newData.prepaid}</strong>
         </div>
       </div>
-      <div className="px-4 flex justify-center items-center gap-52 h-24 mt-4 bg-[#04030528] rounded-2xl">
-        <div className="text-lg">Total Postpaid users</div>
+      <div className="p-2 w-48 flex justify-center items-center gap-6 h-12 ml-[-100px] bg-[#04030528]">
+        <div className="text-sm">Postpaid users</div>
         <div>
-          <strong className="text-2xl">{newData.postpaid}</strong>
+          <strong className="text-xl">{newData.postpaid}</strong>
         </div>
       </div>
-      <div className="px-4 flex justify-center items-center gap-52 h-24 mt-4 bg-[#04030528] rounded-2xl">
-        <div className="text-lg">Total Unknown users</div>
+      <div className="p-2 w-48 flex justify-center items-center gap-6 h-12 ml-[-100px] bg-[#04030528]">
+        <div className="text-sm">Unknown users</div>
         <div>
-          <strong className="text-2xl">{newData.unknown}</strong>
+          <strong className="text-xl">{newData.unknown}</strong>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };

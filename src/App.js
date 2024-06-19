@@ -8,12 +8,13 @@ import AccUsers from "./components/AccUsers";
 import PrePost from "./components/PrePost";
 import Navbar from "./components/Navbar";
 import CompanyWise from "./components/CompanyWise";
+import TeleRisk from "./components/TeleRisk";
 function App() {
   const data = useCSVData();
 
   return (
-    <div className="w-full h-full flex flex-row justify-center items-center bg-[#121b2b]">
-      <div className="w-1/6 h-[100vh] mt-[-900px] text-white flex flex-col p-2 gap-1 pt-12">
+    <div className="w-full h-[100vh] flex flex-col justify-center items-center bg-[#628fdc]">
+      {/* <div className="w-1/6 h-[100vh] mt-[-900px] text-white flex flex-col p-2 gap-1 pt-12">
         <div className="h-3/12 flex flex-col">
         <a
             href=""
@@ -59,61 +60,50 @@ function App() {
           </a>
         </div>
         <div className="h-9/12"></div>
-      </div>
-      <div className="w-5/6 min-h-full bg-[#0c122075] p-6 flex flex-col text-white">
+      </div> */}
         <Navbar />
-        <div className="h-16 ml-8 mt-8">
-          <h2 className="text-4xl font-bold">Welcome to the dashboard</h2>
-        </div>
+      <div className="w-full h-[90vh] bg-[#0c122075] p-2 flex justify-center items-center text-white">
 
-        <div className="flex justify-center items-center p-6 gap-3">
-          {/* //Accounts users */}
-          <div className="w-7/12 h-96 flex flex-col justify-evenly items-center bg-[#141f2fd3] rounded-2xl">
-            <div className="mb-4">
-              <h3 className="font-semibold">Social Account holders</h3>
-            </div>
-            <div>
-              <AccUsers data={data} />
-            </div>
+        <section className="w-4/12 h-full border-x-2 border-y-2">
+          <div className="zone w-full h-3/6 px-16 bg-slate-800 flex justify-center items-center">
+            <h1>Zone wise distribution</h1>
+            <ZonePieChart data={data}/>
           </div>
-          {/* //Zone chart */}
-          <div className="w-5/12 h-96 flex justify-evenly items-center bg-[#141f2fd3] rounded-2xl">
-            <h3 className="font-semibold ml-8">Zone wise distribution</h3>
-            <ZonePieChart data={data} />
+          <div className="zone w-full h-3/6 px-16 bg-slate-800 flex justify-center items-center">
+            {/* <h1>Prepaid and Postpaid data distribution</h1> */}
+            <PrePost data={data}/>
           </div>
+        </section>
 
-        </div>
 
-        {/* Line2 */}
-        <div className="flex justify-center items-center p-6 gap-3 h-auto mt-[-35px]">
-          <div className="w-6/12 h-auto py-12 flex flex-col justify-evenly items-center bg-[#141f2fd3] rounded-2xl">
-            <PrePost data={data} />
+        <section className="w-4/12 h-full border-x-2 border-y-2">
+        <div className="comp w-full h-3/6 px-16 bg-slate-800 flex justify-center items-center">
+            {/* <h1>Zone wise distribution</h1> */}
+            <CompanyWise/>
+            
           </div>
-
-          {/* Users */}
-          <div className="w-6/12 h-auto flex mt-[-260px] flex-col justify-evenly items-center bg-[#141f2fd3] rounded-2xl">
-            <UserTable />
-          </div>
-        </div>
-
-        {/* {total} */}
-        <div className="flex justify-center items-center p-6 gap-3 h-auto mt-[-304px] mb-80">
-          <div className="w-6/12 h-auto bottom-0"></div>
-
-          <div className="w-6/12 h-auto bottom-0">
-            <div className="px-4 py-2 flex flex-col justify-center items-center h-64 bg-[#1e293e50] rounded-2xl">
-              <div className="text-lg">Total number of users</div>
+          <div className="px-4 py-2 flex flex-col justify-center items-center h-28 bg-[#1e293e50]">
+             <div className="text-lg">Total number of users</div>
               <div>
                 <strong className="text-4xl">{data.length}</strong>
               </div>
-            </div>
-          </div>
-        </div>
+             </div>
 
-        {/* Company wise */}
-        <div className="w-[96%] ml-6 rounded-2xl h-auto bg-[#1e39525c] mt-[-328px]">
-          <CompanyWise/>
-        </div>
+           <div className="w-full h-fit">
+            <TeleRisk />
+            </div>  
+        </section>
+
+
+        <section className="w-4/12 h-full border-x-2 border-y-2">
+        <div className="zone w-full h-3/6 bg-slate-800 flex flex-col pt-12 gap-5 justify-center items-center">
+            <h1>Social sites distribution</h1>
+            <AccUsers data={data}/>
+          </div>
+          <div className="user w-full h-3/6 px-16 pt-6 bg-slate-800 flex justify-center items-center">
+            <UserTable/>
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -100,7 +100,6 @@ const CompanyWise = () => {
     { name: "Airtel", value: newData.airtel },
     { name: "Others", value: newData.unknown },
   ];
-  console.log(arrayOfObjects);
 
   const onPieEnter = useCallback(
     (_, index) => {
@@ -109,44 +108,45 @@ const CompanyWise = () => {
     [setActiveIndex]
   );
   return (
-    <div className="flex">
+    <div className="flex w-full h-full p-0">
         <div className="w-[550px]">
-        <PieChart width={500} height={400}>
+        <PieChart width={350} height={350}>
         <Pie
           activeIndex={activeIndex}
           activeShape={renderActiveShape}
           data={arrayOfObjects}
-          cx={250}
-          cy={200}
+          cx={100}
+          cy={150}
           innerRadius={60}
-          outerRadius={100}
+          outerRadius={90}
           fill="#8884d8"
           dataKey="value"
           onMouseEnter={onPieEnter}
+          
         />
       </PieChart>
         </div>
         <div className="flex flex-col justify-center items-center">
-        <div className="px-4 w-[550px] flex justify-center items-center gap-80 h-16 bg-[#04030528] rounded-2xl">
-        <div className="text-lg w-3/5">Airtel users</div>
-        <div className="w-2/5">
+        <div className="px-4 w-[150px] ml-[-90px] flex justify-center items-center gap-3 h-16 bg-[#04030528]">
+        <div className="text-sm">Airtel users</div>
+        <div className="">
           <strong className="text-2xl">{newData.airtel}</strong>
         </div>
       </div>
-      <div className="px-4 w-[550px] flex justify-center items-center gap-80 h-16 mt-4 bg-[#04030528] rounded-2xl">
-        <div className="text-lg w-3/5">Reliance Jio users</div>
+      <div className="px-4 w-[150px] ml-[-90px] flex justify-center items-center gap-3 h-16 bg-[#04030528]">
+        <div className="text-sm w-3/5">Reliance Jio users</div>
         <div className="w-2/5">
           <strong className="text-2xl">{newData.jio}</strong>
         </div>
       </div>
-      <div className="px-4 w-[550px] flex justify-center items-center gap-80 h-16 mt-4 bg-[#04030528] rounded-2xl">
-        <div className="text-lg w-3/5">Vodafone users</div>
+      <div className="px-4 w-[150px] ml-[-90px] flex justify-center items-center gap-3 h-16 bg-[#04030528]">
+        <div className="text-sm w-3/5">Vodafone users</div>
         <div className="w-2/5">
           <strong className="text-2xl">{newData.vodafone}</strong>
         </div>
       </div>
-      <div className="px-4 w-[550px] flex justify-center items-center gap-80 h-16 mt-4 bg-[#04030528] rounded-2xl">
-        <div className="text-lg w-3/5">Other users</div>
+      <div className="px-4 w-[150px] ml-[-90px] flex justify-center items-center gap-3 h-16 bg-[#04030528]">
+        <div className="text-sm w-3/5">Other users</div>
         <div className="w-2/5">
           <strong className="text-2xl">{newData.unknown}</strong>
         </div>
