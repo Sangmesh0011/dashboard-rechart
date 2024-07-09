@@ -18,7 +18,7 @@ const Navbar = () => {
         </h1>
       </div>
       <div className="text-white">
-        <h1 className="text-xl font-bold">Welcome , echargeup</h1>
+        <h1 className="text-xl font-bold">Welcome User</h1>
       </div>
     </div>
   );
